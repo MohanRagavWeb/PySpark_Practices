@@ -1,23 +1,22 @@
 import os
 
-# ensure PySpark uses the current virtual environment python
-os.environ["PYSPARK_PYTHON"] = "python"
-os.environ["PYSPARK_DRIVER_PYTHON"] = "python"
+os.environ["PYSPARK_PYTHON"] = r"C:\Users\Mohan\AppData\Local\Programs\Python\Python311\python.exe"
+os.environ["PYSPARK_DRIVER_PYTHON"] = r"C:\Users\Mohan\AppData\Local\Programs\Python\Python311\python.exe"
 
 from pyspark.sql import SparkSession
 
-# create spark session
+# Create Spark Session
 spark = SparkSession.builder \
-    .master("local[*]") \
-    .appName("Practice") \
+    .appName("First PySpark Program") \
     .getOrCreate()
 
-# get spark context
-sc = spark.sparkContext
+# Create sample data
+data = [("Mohan", 23), ("Rahul", 25), ("Priya", 22)]
 
-# create RDD
-rdd = sc.parallelize([1, 2, 3, 4, 5], 2)
+# Create DataFrame
+df = spark.createDataFrame(data, ["Name", "Age"])
 
-# output
-print("Partitions:", rdd.getNumPartitions())
-print("Data:", rdd.collect())
+# Show Data
+df.show()
+
+spark.stop()
