@@ -1,0 +1,19 @@
+🔹 Combined Date Formats
+Pattern	Output
+"dd-MM-yyyy"	15-01-2026
+"MM/dd/yyyy"	01/15/2026
+"yyyy/MM/dd"	2026/01/15
+"dd MMM yyyy"	15 Jan 2026
+"dd MMMM yyyy"	15 January 2026
+"MMM yyyy"	Jan 2026
+"MMMM yyyy"	January 2026
+"EEEE, dd MMM yyyy"	Thursday, 15 Jan 2026
+
+
+
+🔹 Date + Time Formats
+Pattern	Output
+"yyyy-MM-dd HH:mm:ss"	2026-01-15 14:35:20
+"dd MMM yyyy HH:mm"	15 Jan 2026 14:35
+"dd MMM yyyy hh:mm a"	15 Jan 2026 02:35 PM
+"EEEE, dd MMMM yyyy HH:mm:ss"	Thursday, 15 January 2026 14:35:20
